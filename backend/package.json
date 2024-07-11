@@ -1,0 +1,23 @@
+{
+  "name": "boardgamepage",
+  "version": "1.0.0",
+  "description": "codedex summerhackathon track1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isavlm/BoardGameCafe.git"
+  },
+  "author": "Isadora V",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isavlm/BoardGameCafe/issues"
+  },
+  "homepage": "https://github.com/isavlm/BoardGameCafe#readme",
+  "dependencies": {
+    "fullcalendar": "^6.1.14",
+    "mongoose": "^8.5.0"
+  }
+}
