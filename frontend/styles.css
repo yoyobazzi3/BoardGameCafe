@@ -1,0 +1,64 @@
+.container {
+    background-color: bisque;
+}
+
+#image {
+    width: 100px;
+    height: 100px;
+}
+
+#btn1{
+font-size: large;
+margin-top: 25px;
+}
+
+#id{
+    font-size: large;
+    
+}
+
+.month ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.month li {
+    display: inline;
+    padding: 5px;
+}
+
+.weekdays {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+}
+
+.weekdays li {
+    width: 30px;
+    text-align: center;
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    justify-content: center;
+}
+
+.days li {
+    margin: 5px;
+    padding: 10px;
+    background-color: beige;
+    border-radius: 4px;
+    width: 30px;
+    text-align: center;
+}
+
+.active {
+    background-color: #007bff;
+    color: lightcoral;
+    border-radius: 4px;
+}
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Coffee Menu</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script type="module">
+        import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.131.3/build/three.module.js';
+
+        // Scene, Camera, Renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Lights
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+        const pointLight = new THREE.PointLight(0xffffff, 1);
+        pointLight.position.set(10, 10, 10);
+        scene.add(pointLight);
+
+        // Coffee Drink Objects
+        const coffeeDrinks = [];
+        
+        // Espresso
+        const espressoGeometry = new THREE.CylinderGeometry(1, 1, 2, 32);
+        const espressoMaterial = new THREE.MeshPhongMaterial({ color: 0x8B4513 });
+        const espresso = new THREE.Mesh(espressoGeometry, espressoMaterial);
+        espresso.position.set(-3, 1, 0);
+        scene.add(espresso);
+        coffeeDrinks.push(espresso);
+
+        // Latte
+        const latteGeometry = new THREE.CylinderGeometry(1.5, 1.5, 3, 32);
+        const latteMaterial = new THREE.MeshPhongMaterial({ color: 0xF5DEB3 });
+        const latte = new THREE.Mesh(latteGeometry, latteMaterial);
+        latte.position.set(0, 1.5, 0);
+        scene.add(latte);
+        coffeeDrinks.push(latte);
+
+        // Cappuccino
+        const cappuccinoGeometry = new THREE.CylinderGeometry(1.2, 1.2, 2.5, 32);
+        const cappuccinoMaterial = new THREE.MeshPhongMaterial({ color: 0xD2B48C });
+        const cappuccino = new THREE.Mesh(cappuccinoGeometry, cappuccinoMaterial);
+        cappuccino.position.set(3, 1.25, 0);
+        scene.add(cappuccino);
+        coffeeDrinks.push(cappuccino);
+
+        // Camera Position
+        camera.position.z = 10;
+
+        // Animation Loop
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
